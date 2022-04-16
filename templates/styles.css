@@ -1,0 +1,19 @@
+.headings{
+	background-color: #9c0a00;
+	color: #ffffff;
+	margin-bottom: 70px;
+	padding: 50px;
+	text-align: center;
+}
+
+.body{
+	background-color:#ffffff;
+	color: #000000;
+	margin-bottom: 70px;
+	padding: 20px;
+}
+
+@font-face {
+	font-family: Minecraft;
+	src: url(minecraft_font.woff2)
+}
