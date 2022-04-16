@@ -1,9 +1,56 @@
-.headings{
-	background-color: #9c0a00;
-	color: #ffffff;
-	margin-bottom: 70px;
-	padding: 50px;
+.centraltable {
 	text-align: center;
+	background-color:#ffb4ae;
+	border: 1px solid #9c0a00;
+	border-collapse: collapse;
+}
+.centraltable td,th {
+	padding-left: 100px;
+	padding-right: 50px;
+	padding-bottom: 50px;
+	padding-top: 20px;
+}
+
+.toptable{
+	padding: 20px;
+	background-color:#ffffff;
+}
+
+.altertoptable{
+	padding-right: 100px;
+}
+.submittxt{
+	border: 2px solid transparent;
+	border-radius:3px;
+	border-color: #9c0a00;
+	font-size: 30px;
+}
+
+button, input[type="submit"]{
+	background-color:#9c0a00;
+	font-size: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color:#ffffff;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	text-align: center;
+}
+
+button, input[type="submit"]:hover {
+	background-color:#ae2319;
+}
+
+.tabletxt{
+	font-size: 30px;
+}
+
+.headings{
+	background-color: #ffffff;
+	color: #000000;
+	padding: 20px;
+	padding-right: 100px;
+	text-align: right;
 }
 
 .body{
@@ -13,7 +60,4 @@
 	padding: 20px;
 }
 
-@font-face {
-	font-family: Minecraft;
-	src: url(minecraft_font.woff2)
-}
+
