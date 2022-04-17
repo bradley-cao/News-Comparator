@@ -1,4 +1,4 @@
-# Name: Daniel Philipov
+# Name: Daniel Philipov, Bradley Cao, Katie Merrill, Mina Warner
 # Date: 04/16/2022
 
 import nltk
