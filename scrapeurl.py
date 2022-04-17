@@ -1,7 +1,8 @@
 import sys
 import json
-from newsfetch.news import newspaper
 import requests
+import unidecode
+from newsfetch.news import newspaper
 from bs4 import BeautifulSoup
 
 if __name__ == '__main__':
@@ -34,6 +35,8 @@ if __name__ == '__main__':
         article2 = article2 + " " + data.get_text()
     article1 = article1.strip()
     article2 = article2.strip()
+    article1 = unidecode.unidecode(article1)
+    article2 = unidecode.unidecode(article2)
 
     news = newspaper(url1)
     news2 = newspaper(url2)
