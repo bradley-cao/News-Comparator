@@ -1,2 +1,2 @@
 python-3.8.10
-setuptools<58
+setuptools-57.4.0
