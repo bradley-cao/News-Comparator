@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect
 import scrapeurl, comparator
-
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+#on startup install news-fetch, nltk download punkt, stopwords
 app = Flask('app')
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
