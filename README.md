@@ -23,3 +23,6 @@
 
 ## Its Mission
 To compare the similarities and differences of user-chosen news articles.
+
+## Try it out!
+<a href="url">https://newscomparator.tech</a>
