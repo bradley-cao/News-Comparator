@@ -64,9 +64,8 @@ def scrape_urls(url1, url2) -> dict:
     json_object = json.dumps(fulldict, indent=4)
     with open("sites.json", "w+") as outfile:
         outfile.write(json_object)
-
+        
     return fulldict
-    #return dictionary?    
 
         
 
