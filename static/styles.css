@@ -29,20 +29,35 @@
     font-weight: regular;
 }
 
-.centraltable, .centralfinaltable {
+.grad{
+    background: linear-gradient(to bottom right, white, floralwhite)
+    background-size: cover;
+}
+
+.centraltable {
 	text-align: center;
 	background-color:#ffb4ae;
 	border: 3px solid #9c0a00;
-    border-radius: 30px;
+  border-radius: 30px;
+}
+.centralfinaltable {
+  padding: 0px 50px;
+  padding-bottom: 50px;
+  text-align: center;
+	background-color:#ffb4ae;
+	border: 3px solid #9c0a00;
+  border-radius: 30px;
+  text-align: center;
+  margin: auto;
 }
 .centraltable td,th {
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-bottom: 30px;
 	padding-top: 0px;
-    font-family: "Confiteria Bold";
-    font-size: 40px;
-    color: black;
+  font-family: "Confiteria Bold";
+  font-size: 40px;
+  color: black;
 }
 
 .centraltable2 td,th {
@@ -55,9 +70,12 @@
     color: black;
 }
 
-.centralfinaltable td,th {
-	padding-left: 50px;
-	padding-right: 50px;
+.centralfinaltable td {
+  table-layout: fixed;
+  width: 45%;
+}
+.centralfinaltable th {
+  table-layout: fixed;
 }
 
 .toptable{

@@ -2,22 +2,17 @@ import sys
 import json
 import requests
 import unidecode
+from urllib.request import urlopen
 from newsfetch.news import newspaper
 from bs4 import BeautifulSoup
 
-def scrape_urls(url1, url2) -> dict:
+def scrape_urls(url1, url2):
     fulldict = dict()
-    get = requests.get(url1)
-    get2 = requests.get(url2)
-    failed = False
-    if get.status_code == 404:
-        print(1)
-        failed = True
-    if get2.status_code == 404:
-        print(2)
-        failed = True
-    if failed == True:
-        sys.exit(1)
+    try:
+        html1 = urlopen(url1)
+        html2 = urlopen(url2)
+    except:
+        return "Error"
 
     data1 = requests.get(url1)
     data2 = requests.get(url2) 

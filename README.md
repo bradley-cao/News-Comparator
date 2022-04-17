@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/badge/Frontend-Flask-d78fb9?logo=flask&logoColor=d78fb9" alt="what"> 
 <img src="https://img.shields.io/badge/Backend-Python-blue?logo=python&logoColor=yellow" alt="what"> 
 <img src="https://img.shields.io/badge/Framework-NLTK-white" alt="what"> 
-<img src="https://img.shields.io/badge/Version-0.9-purple?logo=github&logoColor=white" alt="what">
+<img src="https://img.shields.io/badge/Version-1.0-purple?logo=github&logoColor=white" alt="what">
 <img src="https://img.shields.io/badge/Library-newsfetch-yellow?logo=New York Times&logoColor=white" alt="what">
 </p>
 

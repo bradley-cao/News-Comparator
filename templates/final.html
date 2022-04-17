@@ -26,7 +26,7 @@
 					</tr>
 				</thead>
 			</table>
-		</div>
+		  </div>
 
         <div>
 					<form method = "POST">
@@ -42,8 +42,9 @@
         </div>
             
         <div class="body">
-			<table class="centralfinaltable">
-				<thead>
+			<div class="centralfinaltable">
+        <center>
+          <table>
 					<tr id="tabletitle">
 						<th>
 						<h2>{{scraped_urls[0]["headline"]}}</h2>
@@ -55,39 +56,38 @@
 						<h3>{{scraped_urls[1]["author"][0]}}</h3>
 						</th>
 					</tr>
+          </table>
 					
-					<tr id="tabletxt">
-                    <td></td>
-                    <td><h1>Closest Match</h1></td>
-                    <td></td>
+					
+          <td><h1>Closest Match</h1></td>
+
+          <table>
 					{%for pair in prtop %}
-                        <tr style="padding-down: 10px">
+            <tr style="padding-down: 10px">
 						<td>
-                            {{pair[0]}}
+            {{pair[0]}}
 						</td>
-                        <td></td>
-                        <td>
-                            {{pair[1]}}
-                        </td>
-                        </tr>
+            <td>
+            {{pair[1]}}
+            </td>
+            </tr>
 					{%endfor%}
-                        <tr>
-                        <td></td>
-                        <td><h1>Farthest Match</h1></td>
-                        <td></td>
-                    {%for pair in lowtop %}
-                        <tr style="padding-down: 10px">
-                        <td>
-                            {{pair[0]}}
-                        </td>
-                        <td></td>
-                        <td>
-                            {{pair[1]}}
-                        </td>
+          </table>
+          
+          <h1 style="text-align: center">Farthest Match</h1>
+            <table>
+            {%for pair in lowtop %}
+            <tr style="padding-down: 10px">
+            <td>
+              {{pair[0]}}
+            </td>
+            <td>
+              {{pair[1]}}
+            </td>
 					</tr>
-                    {%endfor%}
-				</thead>
+          {%endfor%}
 			</table>
+          </center>
 		</div>
         </center>
     </body>
