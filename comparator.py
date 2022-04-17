@@ -3,14 +3,12 @@
 
 import nltk
 import json
-import spacy
-import sys
-
+from typing import Tuple
 
 stopwords = set(nltk.corpus.stopwords.words('english'))
 
 def manage_url(url, headline=None, author=None, date_publish=None, publication=None, category=None,
-                 source_domain=None, article=None, description=None, keyword=None, **kwargs):
+                article=None, description=None, keyword=None, **kwargs):
     print(f'{url=}')
     print(f'{headline=}')
     print(f'{author=}')
@@ -18,15 +16,19 @@ def manage_url(url, headline=None, author=None, date_publish=None, publication=N
     print(f'{publication=}')
     print(f'{category=}')
     print(f'{description=}')
-    # print('Getting Words...')
-    words = nltk.word_tokenize(article)
-    # print(words)
-    # print('Getting Sentences...')
-    sents = nltk.sent_tokenize(article)
-    # print(sents)
-    # print('Getting Contexts...')
-    content = nltk.text.Text(words)
-    # process_keywords(keyword, content)
+
+def compare_sents(article1, article2, word) -> Tuple[dict, dict]:
+    sents1, sents2 = get_sents(article1), get_sents(article2)
+    dict1 = dict2 = {}
+    for sent1 in find_sents(sents1, word):
+        for sent2 in find_sents(sents2, word):
+            score = cosine_similarity(sent1, sent2)
+            dict1[sent1] = (sent2, score)
+            dict2[sent2] = (sent1, score)
+    return dict1, dict2
+
+def get_sents(article):
+    return nltk.sent_tokenize(article)
 
 def process_keywords(keywords, text):
     for keyword in keywords:
@@ -38,8 +40,9 @@ def process_keywords(keywords, text):
         text.concordance(keyword)
 
 def find_sents(sents, word):
+    word = word.lower()
     for sent in sents:
-        if word in sent:
+        if word in sent.lower():
             yield sent
 
 def cosine_similarity(text1, text2) -> float:
@@ -51,3 +54,7 @@ if __name__ == '__main__':
     common_keywords = set().union(*[set(data['keyword']) for data in sites.values()])
     for site, data in sites.items():
         manage_url(site, **data)
+
+    all_dict = {word: compare_sents(*[data['article'] for data in sites.values()], word) for word in common_keywords}
+    all_dict['closest'] = (m := max(all_dict.items(), key=lambda e: e[1][1]))[0], m[1][0]
+    json.dump(all_dict, open('words_comparison.json', 'w'))
