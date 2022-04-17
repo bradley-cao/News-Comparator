@@ -31,7 +31,7 @@
         <div>
 					<form method = "POST">
             <h2 style="line-height: 0%;">Select Keyword:</h2> <h3>{{word}}</h3>
-            <select name="keyword">
+            <select name="keyword" size>
 			<option value = "">Select</option>
                 {% for word in keywords %}
 								<option value = {{word}} style="font-size:20px"> {{word}} </option>
