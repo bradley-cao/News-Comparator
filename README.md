@@ -6,7 +6,8 @@
 <img src="https://img.shields.io/badge/Backend-Python-blue?logo=python&logoColor=yellow" alt="what"> 
 <img src="https://img.shields.io/badge/Framework-NLTK-white" alt="what"> 
 <img src="https://img.shields.io/badge/Version-1.0-purple?logo=github&logoColor=white" alt="what">
-<img src="https://img.shields.io/badge/Library-newsfetch-yellow?logo=New York Times&logoColor=white" alt="what">
+<img src="https://img.shields.io/badge/Library-newsfetch-yellow?logo=Google News&logoColor=white" alt="what">
+<img src="https://img.shields.io/badge/Rating-★★★★★-yellow" alt="what">
 </p>
 
 <div>
