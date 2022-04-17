@@ -37,6 +37,8 @@ if __name__ == '__main__':
     article2 = article2.strip()
     article1 = unidecode.unidecode(article1)
     article2 = unidecode.unidecode(article2)
+    article1 = article1.replace("\n", "")
+    article2 = article2.replace("\n", "")
 
     news = newspaper(url1)
     news2 = newspaper(url2)
