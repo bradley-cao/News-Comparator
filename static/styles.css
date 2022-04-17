@@ -1,12 +1,33 @@
 @font-face{
-font-family: "Bungee Shade";
-src: url("BungeeShade-Regular.ttf");
-font-weight: bold;
+    font-family: "Bungee Shade";
+    src: url("BungeeShade-Regular.ttf");
+    font-weight: bold;
 }
 @font-face{
-font-family: Bungee;
-src: url('Bungee-Regular.ttf');
-font-weight: bold;}
+    font-family: Bungee;
+    src: url('Bungee-Regular.ttf');
+    font-weight: bold;
+}
+@font-face{
+    font-family: Rosewood;
+    src: url('Rosewood.ttf');
+    font-weight: regular;
+}
+@font-face{
+    font-family: "Confiteria Bold";
+    src: url('ConfiteriaScript-Bold.otf');
+    font-weight: bold;
+}
+@font-face{
+    font-family: "Confiteria SemiBold";
+    src: url('ConfiteriaScript-SemiBold.otf');
+    font-weight: semibold;
+}
+@font-face{
+    font-family: "AmericanTypewriter";
+    src: url("AmericanTyperiter.ttc");
+    font-weight: regular;
+}
 
 .centraltable, .centralfinaltable {
 	text-align: center;
@@ -15,19 +36,38 @@ font-weight: bold;}
     border-radius: 30px;
 }
 .centraltable td,th {
-	padding-left: 100px;
+	padding-left: 50px;
 	padding-right: 50px;
-	padding-bottom: 50px;
-	padding-top: 20px;
+	padding-bottom: 30px;
+	padding-top: 0px;
+    font-family: "Confiteria Bold";
+    font-size: 40px;
+    color: black;
+}
+
+.centraltable2 td,th {
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 20px;
+	padding-top: 50px;
+    font-family: "Bungee";
+    font-size: 40px;
+    color: black;
 }
 
 .centralfinaltable td,th {
-	padding-left: 100px;
+	padding-left: 50px;
 	padding-right: 50px;
 }
 
 .toptable{
 	padding: 20px;
+	background-color:#ffffff;
+}
+.toptable2 {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
 	background-color:#ffffff;
 }
 
@@ -46,8 +86,8 @@ font-weight: bold;}
 button, input[type="submit"]{
 	background-color:#9c0a00;
 	font-size: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color:#ffffff;
 	border-radius: 5px;
 	border: 2px solid transparent;
@@ -61,6 +101,7 @@ button, input[type="submit"]:hover {
 
 #tabletitle{
 	padding-bottom: 0px;
+  line-height: 240%;
 }
 
 #tabletxt{

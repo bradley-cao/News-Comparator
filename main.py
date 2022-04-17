@@ -4,7 +4,6 @@ import scrapeurl, comparator
 app = Flask('app')
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-
 # pretty sure these still aren't global and therefore aren't serving any purpose being here
 url1 = ''
 url2 = ''
@@ -45,11 +44,11 @@ def final():
     if request.method == "POST":
         print(request.form.get("keyword"))
         word = request.form.get("keyword")
-        return render_template("final.html", keywords = keywords, scraped_urls = scraped_urls, tops = tops, word=word, prtop = tops[word]['closest'])
+        return render_template("final.html", keywords = keywords, scraped_urls = scraped_urls, tops = tops, word=word, prtop = tops[word]['closest'], lowtop = tops[word]['furthest'])
 
     else:
         word=keywords[0]
-        return render_template("final.html", keywords = keywords, scraped_urls = scraped_urls, tops = tops, word=word, prtop = tops[word]['closest'])
+        return render_template("final.html", keywords = keywords, scraped_urls = scraped_urls, tops = tops, word=word, prtop = tops[word]['closest'], lowtop = tops[word]['furthest'])
 
 app.run(host="0.0.0.0", port=8080)
 

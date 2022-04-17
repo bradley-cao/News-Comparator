@@ -7,7 +7,7 @@
 	</head>
     <body>
 		<center>
-		<div class="toptable">
+		<div class="toptable2">
 			<table>
 				<thead>
 					<tr>
@@ -16,10 +16,11 @@
 						</td>
 						<td>
 							<style> 
-								h1 {font-size: 50px; color:black}
-								h2 {font-size: 40px; color:black}
+								h1 {font-size: 50px; color:maroon; font-family: "Bungee Shade"}
+								h2 {font-size: 40px; color:indianred; font-family: "Bungee"}
+                                h3 {font-size: 30px; color: coral; font-family: Bungee}
 							</style>
-							<h1 font-size= 50px >Redstone Comparator</h1>
+							<h1>Redstone Comparator</h1>
 							<h2>News Comparison Website</h2>
 						</td>
 					</tr>
@@ -29,7 +30,7 @@
 
         <div>
 					<form method = "POST">
-            <h1>Select Keyword:</h1> <h3>{{word}}</h3>
+            <h2 style="line-height: 0%;">Select Keyword:</h2> <h3>{{word}}</h3>
             <select name="keyword">
 			<option value = "">Select</option>
                 {% for word in keywords %}
@@ -52,20 +53,39 @@
 						<th>
 						<h2>{{scraped_urls[1]["headline"]}}</h2>
 						<h3>{{scraped_urls[1]["author"][0]}}</h3>
-                        <h4>{{word}}</h4>
 						</th>
 					</tr>
 					
 					<tr id="tabletxt">
-					{%for sentence in prtop %}
-                        <tr>
+                    <td></td>
+                    <td><h1>Closest Match</h1></td>
+                    <td></td>
+					{%for pair in prtop %}
+                        <tr style="padding-down: 10px">
 						<td>
-							 <!--insert loop thru doc 2 results-->
+                            {{pair[0]}}
 						</td>
+                        <td></td>
+                        <td>
+                            {{pair[1]}}
+                        </td>
                         </tr>
 					{%endfor%}
-
+                        <tr>
+                        <td></td>
+                        <td><h1>Farthest Match</h1></td>
+                        <td></td>
+                    {%for pair in lowtop %}
+                        <tr style="padding-down: 10px">
+                        <td>
+                            {{pair[0]}}
+                        </td>
+                        <td></td>
+                        <td>
+                            {{pair[1]}}
+                        </td>
 					</tr>
+                    {%endfor%}
 				</thead>
 			</table>
 		</div>
