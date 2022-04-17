@@ -5,7 +5,7 @@ import nltk
 import json
 from typing import Tuple
 
-stopwords = set(nltk.corpus.stopwords.words('english'))
+stopwords = frozenset(nltk.corpus.stopwords.words('english'))
 
 def manage_url(url, headline=None, author=None, date_publish=None, publication=None, category=None,
                 article=None, description=None, keyword=None, **kwargs):
@@ -45,8 +45,20 @@ def find_sents(sents, word):
         if word in sent.lower():
             yield sent
 
-def cosine_similarity(text1, text2) -> float:
-    return nltk.cluster.util.cosine_distance(text1, text2)
+def cosine_similarity(sent1, sent2) -> float:
+    l1, l2 = [], []
+    text1, text2 = nltk.word_tokenize(sent1), nltk.word_tokenize(sent2)
+    x_list = set(text1) - stopwords
+    y_list = set(text2) - stopwords
+    rvector = x_list | y_list
+    for w in rvector:
+        l1.append(int(w in x_list))
+        l2.append(int(w in y_list))
+    c = 0
+    for i in range(len(rvector)):
+        c += l1[i] * l2[i]
+    cosine = c / float(sum(l1) * sum(l2))
+    return cosine
 
 if __name__ == '__main__':
     sites = json.load(open('sites.json', 'r'))
@@ -56,5 +68,7 @@ if __name__ == '__main__':
         manage_url(site, **data)
 
     all_dict = {word: compare_sents(*[data['article'] for data in sites.values()], word) for word in common_keywords}
-    all_dict['closest'] = (m := max(all_dict.items(), key=lambda e: e[1][1]))[0], m[1][0]
-    json.dump(all_dict, open('words_comparison.json', 'w'))
+    all_dict['closest'] = (m := max(all_dict[list(all_dict.keys())[0]][0].items(), key=lambda e: e[1][1]))[0], m[1][0]
+    dumper = json.dumps(all_dict, indent=4)
+    with open('words_comparison.json', 'w+') as f:
+        f.write(dumper)

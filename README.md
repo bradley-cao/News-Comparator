@@ -15,5 +15,5 @@
 
 *Written by Daniel Philipov, Bradley Cao, Katie Merrill, and Mina Warner*
 
-# Its Mission
+## Its Mission
 To compare the similarities and differences of user-chosen news articles.
