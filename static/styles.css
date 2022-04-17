@@ -1,0 +1,91 @@
+@font-face{
+font-family: "Bungee Shade";
+src: url("BungeeShade-Regular.ttf");
+font-weight: bold;
+}
+@font-face{
+font-family: Bungee;
+src: url('Bungee-Regular.ttf');
+font-weight: bold;}
+
+.centraltable, .centralfinaltable {
+	text-align: center;
+	background-color:#ffb4ae;
+	border: 3px solid #9c0a00;
+    border-radius: 30px;
+}
+.centraltable td,th {
+	padding-left: 100px;
+	padding-right: 50px;
+	padding-bottom: 50px;
+	padding-top: 20px;
+}
+
+.centralfinaltable td,th {
+	padding-left: 100px;
+	padding-right: 50px;
+}
+
+.toptable{
+	padding: 20px;
+	background-color:#ffffff;
+}
+
+/*image padding*/
+.altertoptable{
+	padding-right: 100px;
+}
+/* text boxes that user types in */
+.submittxt{
+	border: 2px solid transparent;
+	border-radius:3px;
+	border-color: #9c0a00;
+	font-size: 30px;
+}
+
+button, input[type="submit"]{
+	background-color:#9c0a00;
+	font-size: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color:#ffffff;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	text-align: center;
+    font-family:Bungee;
+}
+
+button, input[type="submit"]:hover {
+	background-color:#ae2319;
+}
+
+#tabletitle{
+	padding-bottom: 0px;
+}
+
+#tabletxt{
+	font-size: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#tablesub{
+	font-size: 20px;
+}
+
+.headings{
+	background-color: #ffffff;
+	color: #000000;
+	padding: 20px;
+	padding-right: 100px;
+	text-align: right;
+}
+
+.body{
+	background-color:#ffffff;
+	color: #000000;
+	margin-bottom: 70px;
+	padding: 20px;
+}
+
+

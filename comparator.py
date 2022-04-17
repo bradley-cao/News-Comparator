@@ -1,4 +1,4 @@
-# Name: Daniel Philipov, Bradley Cao, Katie Merrill, Mina Warner
+# Name: Daniel Philipov
 # Date: 04/16/2022
 
 import nltk
@@ -49,6 +49,7 @@ def cosine_similarity(sent1, sent2) -> float:
     cosine = c / float(sum(l1) * sum(l2))
     return cosine
 
+# makes the dictionary of all pairs
 def make_structure(sites=None) -> dict:
     if sites is None:
         sites = json.load(open('sites.json', 'r'))
@@ -56,18 +57,20 @@ def make_structure(sites=None) -> dict:
     common_keywords = set().union(*[set(data['keyword']) for data in sites.values()])
 
     all_dict = {word: compare_sents(*[data['article'] for data in sites.values()], word) for word in common_keywords}
-    for word, sents in all_dict.items():
-        if sents:
-            all_dict[word]['closest'] = *(m := max(sents, key=sents.get)), sents[m]
-
+    # for word, sents in all_dict.items():
+    #     if sents:
+    #         all_dict[word]['closest'] = *(m := max(sents, key=sents.get)), sents[m]
     return all_dict
 
+# takes the dictionary, returns top 5 and bottom 5
 def read_structure(scores) -> Dict[str, Tuple[list, list]]:
     tops = {}
-    for word, pairs in scores.values():
+    for word, pairs in scores.items():
         tops[word] = {}
         tops[word]['closest'] = sorted(pairs, key=pairs.get, reverse=True)[:5]
         tops[word]['furthest'] = sorted(pairs, key=pairs.get, reverse=False)[:5]
+    with open('tops.json', 'w') as f:
+        f.write(json.dumps(tops, indent=4))
     return tops
 
 

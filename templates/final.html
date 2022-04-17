@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<link href="styles.css" rel="stylesheet"> 
+		<link href="/static/styles.css" rel="stylesheet"> 
+        <meta name="theme-color" content="#6c1515">
 		<title>News Comparator</title>
 	</head>
     <body>
@@ -11,7 +12,7 @@
 				<thead>
 					<tr>
 						<td  class="altertoptable">
-							<img src="Redstone_Comparator.png" alt="Minecraft Redstone Comparator">
+							<img src="/static/Redstone_Comparator.png" alt="Minecraft Redstone Comparator">
 						</td>
 						<td>
 							<style> 
@@ -27,31 +28,42 @@
 		</div>
 
         <div>
-            <h1>Select Keyword:</h1>
+					<form method = "POST">
+            <h1>Select Keyword:</h1> <h3>{{word}}</h3>
             <select name="keyword">
-                <option value="" style="font-size:20px">Placeholder</option>
-                <!--insert python loop for keyword options-->
+			<option value = "">Select</option>
+                {% for word in keywords %}
+								<option value = {{word}} style="font-size:20px"> {{word}} </option>
+							{% endfor %}
             </select>
+						<button type="submit">Select</button>
+					</form>
         </div>
             
         <div class="body">
-			<table class="centraltable">
+			<table class="centralfinaltable">
 				<thead>
-					<tr class="tabletxt">
-						<th>Newspage One</th>
+					<tr id="tabletitle">
+						<th>
+						<h2>{{scraped_urls[0]["headline"]}}</h2>
+						<h3>{{scraped_urls[0]["author"][0]}}</h3>
+						</th>
 						<th></th>
-						<th>Newspage Two</th>
+						<th>
+						<h2>{{scraped_urls[1]["headline"]}}</h2>
+						<h3>{{scraped_urls[1]["author"][0]}}</h3>
+                        <h4>{{word}}</h4>
+						</th>
 					</tr>
-					<tr>
+					
+					<tr id="tabletxt">
+					{%for sentence in prtop %}
+                        <tr>
 						<td>
-							Placeholder <!--insert loop thru doc 1 results-->
+							 <!--insert loop thru doc 2 results-->
 						</td>
-						<td>
-							
-						</td>
-						<td>
-							Placeholder <!--insert loop thru doc 2 results-->
-						</td>
+                        </tr>
+					{%endfor%}
 
 					</tr>
 				</thead>

@@ -1,13 +1,12 @@
 # News-Comparator
 <p>
 <img src="https://img.shields.io/badge/Contributors-4-orange?logo=github" alt="what" > 
-<img src="https://img.shields.io/badge/Minecraft References-∞-green?logo=mojang studios&link=https://minecraft.net" alt="what"> 
+<img src="https://img.shields.io/badge/Minecraft References-∞-green?logo=mojang studios" alt="what"> 
 <img src="https://img.shields.io/badge/Frontend-Flask-d78fb9?logo=flask&logoColor=d78fb9" alt="what"> 
 <img src="https://img.shields.io/badge/Backend-Python-blue?logo=python&logoColor=yellow" alt="what"> 
-<img src="https://img.shields.io/badge/Library-NLTK-white?logo=bookstack&logoColor=white&link=https://nltk.org" alt="what"> 
-<img src="https://img.shields.io/badge/Version-0.001-purple?logo=github&logoColor=white" alt="what">
-<img src="https://img.shields.io/badge/Library-newsfetch-yellow?logo=Google News&logoColor=white" alt="what">
-<img src="https://img.shields.io/badge/Rating-★★★★★-yellow?labelColor=purple" alt="what">
+<img src="https://img.shields.io/badge/Framework-NLTK-white" alt="what"> 
+<img src="https://img.shields.io/badge/Version-0.9-purple?logo=github&logoColor=white" alt="what">
+<img src="https://img.shields.io/badge/Library-newsfetch-yellow?logo=New York Times&logoColor=white" alt="what">
 </p>
 
 <div>
@@ -18,7 +17,7 @@
 </p>
 </div>
 
-## HackTJ 2022 Project
+## **HackTJ 2022 Project**
 
 *Written by Daniel Philipov, Bradley Cao, Katie Merrill, and Mina Warner*
 

@@ -67,7 +67,3 @@ def scrape_urls(url1, url2) -> dict:
         outfile.write(json_object)
         
     return returndict
-
-        
-
-
