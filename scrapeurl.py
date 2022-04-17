@@ -5,10 +5,8 @@ import unidecode
 from newsfetch.news import newspaper
 from bs4 import BeautifulSoup
 
-if __name__ == '__main__':
+def scrape_urls(url1, url2) -> dict:
     fulldict = dict()
-    url1 = sys.argv[1]
-    url2 = sys.argv[2]
     get = requests.get(url1)
     get2 = requests.get(url2)
     failed = False
@@ -63,12 +61,12 @@ if __name__ == '__main__':
     url2dict['category'] = news2.category
 
     fulldict = {url1: url1dict, url2: url2dict}
-
     json_object = json.dumps(fulldict, indent=4)
     with open("sites.json", "w+") as outfile:
         outfile.write(json_object)
 
-        
+    return fulldict
+    #return dictionary?    
 
         
 
