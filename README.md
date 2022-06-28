@@ -25,7 +25,7 @@
 ## Its Mission
 To compare the similarities and differences of user-chosen news articles.
 
-## Try it out!
+## Try it out! (Currently not being hosted)
 <a href="url">https://newscomparator.tech</a>
 
 ## Hackathon Devpost:
